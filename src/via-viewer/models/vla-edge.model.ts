@@ -1,4 +1,4 @@
-/* Modelo de interface para o Edge */
+
 
 export interface VlaEdge {
   id: string;

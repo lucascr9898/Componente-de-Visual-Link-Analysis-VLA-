@@ -1,7 +1,7 @@
 import { VlaEdge } from "./vla-edge.model";
 import { VlaNode } from "./vla-node.model";
 
-export interface vlaInterface {
+export interface VlaInterface {
     nodes: VlaNode[];
     edges: VlaEdge[];
 }

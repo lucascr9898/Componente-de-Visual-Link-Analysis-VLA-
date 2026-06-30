@@ -1,5 +1,3 @@
-/* Modelo de interface para o Nodes*/
-
 export type EntityCategory =
   | 'person'
   | 'company'
@@ -15,4 +13,6 @@ export interface VlaNode {
   label: string;
   metadata?: Record<string, string | number | boolean>;
 }
+
+
 

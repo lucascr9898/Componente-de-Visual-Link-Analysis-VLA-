@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { forkJoin, Observable } from "rxjs";
-import { map } from "rxjs";
 import { VlaNode } from "../models/vla-node.model";
 import { VlaEdge } from "../models/vla-edge.model";
-import { vlaInterface } from "../models/vla-Interface";
+import { VlaInterface } from "../models/vla-interface";
 
 
 @Injectable ({ providedIn: 'root'})
@@ -15,7 +14,7 @@ export class VlaInterfaceService {
 
  constructor(private http: HttpClient) {}
 
-  getJson(): Observable<vlaInterface> {
+  getJson(): Observable<VlaInterface> {
     return forkJoin({
         nodes: this.http.get<VlaNode[]>(this.pathNodes),
         edges: this.http.get<VlaEdge[]>(this.pathEdges)
