@@ -1,26 +1,28 @@
-
 import { FilterOption } from "../../models/entity-type-filter.model"
 import { Component } from "@angular/core"
 import { Output } from "@angular/core"
 import { EventEmitter } from "@angular/core"
 import { EntityCategory } from "../../models/vla-node.model"
+import { LucideAngularModule, User, Building2, Phone, Mail, MapPin, FileText, Car } from 'lucide-angular';
+
 
 @Component({
   selector: 'app-entity-type-filter',
   standalone: true,
+  imports: [LucideAngularModule],
   templateUrl: './entity-type-filter.html',
   styleUrl: './entity-type-filter.css'
 })
 
 export class EntityTypeFilter {
 filters: FilterOption[] = [
-  { type: 'person', label: 'Pessoa', color: '#3b82f6', active: true },
-  { type: 'company', label: 'Empresa', color: '#d9e477', active: true },
-  { type: 'phone', label: 'Telefone', color: '#2a8f2a', active: true },
-  { type: 'email', label: 'E-mail', color: '#5c1344', active: true },
-  { type: 'address', label: 'Endereço', color: '#7c880f', active: true },
-  { type: 'document', label: 'Documento', color: '#a01010', active: true },
-  { type: 'vehicle', label: 'Veículo', color: '#a98', active: true }
+  { type: 'person', label: 'Pessoa', color: '#3b82f6', active: true, icon: User },
+  { type: 'company', label: 'Empresa', color: '#f59e0b', active: true, icon: Building2 },
+  { type: 'phone', label: 'Telefone', color: '#10b981', active: true, icon: Phone },
+  { type: 'email', label: 'E-mail', color: '#8b5cf6', active: true, icon: Mail },
+  { type: 'address', label: 'Endereço', color: '#ec4899', active: true, icon: MapPin },
+  { type: 'document', label: 'Documento', color: '#ef4444', active: true, icon: FileText },
+  { type: 'vehicle', label: 'Veículo', color: '#06b6d4', active: true, icon: Car }
 ]
 
 //Mudar estado pelo clique
