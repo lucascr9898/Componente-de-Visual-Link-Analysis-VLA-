@@ -1,7 +1,9 @@
 
-import { filter } from "rxjs";
 import { FilterOption } from "../../models/entity-type-filter.model"
 import { Component } from "@angular/core"
+import { Output } from "@angular/core"
+import { EventEmitter } from "@angular/core"
+import { EntityCategory } from "../../models/vla-node.model"
 
 @Component({
   selector: 'app-entity-type-filter',
@@ -21,8 +23,15 @@ filters: FilterOption[] = [
   { type: 'vehicle', label: 'Veículo', color: '#a98', active: true }
 ]
 
+//Mudar estado pelo clique
   toggleFilter(filter: FilterOption) {
     filter.active = !filter.active
-  const activeFilters = this.filters.filter(f => f.active = true);
+  const activeFilters = this.filters.filter(f => f.active === true);
+
+  // Enviar o output formatado para o pai
+  const activeTypes = activeFilters.map(f => f.type);
+  this.filtersChanged.emit(activeTypes)
   }
+
+  @Output() filtersChanged = new EventEmitter<EntityCategory[]>()
 }
