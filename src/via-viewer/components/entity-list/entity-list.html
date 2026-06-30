@@ -1,0 +1,11 @@
+<div class ="list-entity">
+<input type="text" placeholder="Buscar entidade"[(ngModel)]="searchInput" />
+
+<ul>
+    @for (entity of finalList; track entity.id){
+        <li
+           [class.selected]="entity.id === selectedName?.id"></li>
+        
+    }
+</ul>
+</div>
