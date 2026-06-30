@@ -1,5 +1,5 @@
+import { LucideIconInput } from "@lucide/angular"
 import { EntityCategory } from "./vla-node.model"
-import { LucideIconData } from "lucide-angular"
 
 
 export interface FilterOption {
@@ -7,5 +7,5 @@ export interface FilterOption {
     color: string,
     label: string,
     active: boolean,
-    icon: LucideIconData,
+    icon: LucideIconInput
 }

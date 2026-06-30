@@ -8,8 +8,7 @@
             [class.filter-item--active]="filter.active"
             (click)="toggleFilter(filter)">
 
-            <lucide-icon [img]="filter.icon" [color]="filter.active ? filter.color : '#9ca3af'" [size]="18"></lucide-icon>
-            <span class="filter-label">{{filter.label}}</span>
+ <svg [lucideIcon]="filter.icon" [color]="filter.active ? filter.color : '#9ca3af'" [size]="18"></svg>            <span class="filter-label">{{filter.label}}</span>
         </li>
         }
     </ul>
