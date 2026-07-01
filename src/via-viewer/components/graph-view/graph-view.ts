@@ -18,9 +18,12 @@ export class GraphView implements AfterViewInit {
 
     @ViewChild('graphContainer') graphContainer!: ElementRef;
 
-    ngAfterViewInit(): void {
-        console.log(this.graphContainer.nativeElement);
-    }
+   ngAfterViewInit(): void {
+       const nodesDataSet = new DataSet(this.mapNodesNetwork());
+       const edgesDataSet = new DataSet(this.mapEdgesNetwork());
+       const data = { nodes: nodesDataSet, edges: edgesDataSet};
+       const network = new Network(this.graphContainer.nativeElement, data, {});
+   }
 
     mapEdgesNetwork() {
     return this.edges.map(edge => {
