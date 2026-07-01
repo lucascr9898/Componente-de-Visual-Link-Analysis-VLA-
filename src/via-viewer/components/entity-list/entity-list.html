@@ -4,8 +4,13 @@
 <ul>
     @for (entity of finalList; track entity.id){
         <li
-           [class.selected]="entity.id === selectedName?.id"></li>
+           [class.selected]="entity.id === selectedName?.id"
+           (click)="onEntityClick(entity)">
+           <span>{{entity.label}}</span>
+           <span>{{entity.type}}</span>
         
+        </li>
+
     }
 </ul>
 </div>
